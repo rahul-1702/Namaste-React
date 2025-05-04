@@ -1,0 +1,20 @@
+{
+  "name": "igniting-react-app",
+  "version": "1.0.0",
+  "description": "code for igniting the react app using parcel from scratch",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Rahul",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
