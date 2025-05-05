@@ -1,0 +1,21 @@
+{
+  "name": "jsx-app",
+  "version": "1.0.0",
+  "description": "jsx app",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "jsx"
+  ],
+  "author": "Rahul",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  }
+}

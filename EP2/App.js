@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+// parent : React Element / JS Object => render : (converted into HTML)
+
 const parent = React.createElement(
   "div",
   {
