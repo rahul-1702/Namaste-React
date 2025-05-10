@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 class ClassComp extends React.Component {
   constructor(props) {
@@ -12,7 +13,18 @@ class ClassComp extends React.Component {
   }
 
   componentDidMount() {
+    setTimeout(() => {
+      this.setState({ theme: this.state.theme === "light" ? "dark" : "light" });
+    }, 1000);
     console.log(this.props.name + " ClassComp Component did mount");
+  }
+
+  componentDidUpdate(){
+    console.log(this.props.name + " yes updated");
+  }
+
+  componentWillUnmount(){
+    console.log(this.props.name + " Component will unmount");
   }
 
   render() {
@@ -24,9 +36,13 @@ class ClassComp extends React.Component {
     return (
       <>
         <h1>Theme is {theme}</h1>
+        <div>
+        <Link to={"/about"}>About Page</Link>
+        <hr />
+        </div>
         <button
           onClick={() => {
-            this.setState({ theme: theme === "light" ? "dark" : "light" });
+            // this.setState({ theme: theme === "light" ? "dark" : "light" });
           }}
         >
           Toggle Theme
