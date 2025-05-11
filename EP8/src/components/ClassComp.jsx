@@ -13,9 +13,9 @@ class ClassComp extends React.Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({ theme: this.state.theme === "light" ? "dark" : "light" });
-    }, 1000);
+    // setTimeout(() => {
+    //   this.setState({ theme: this.state.theme === "light" ? "dark" : "light" });
+    // }, 1000);
     console.log(this.props.name + " ClassComp Component did mount");
   }
 

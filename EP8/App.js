@@ -21,8 +21,24 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<ClassComp name={"First"} age={23} />} />
-          {/* <ClassComp name={"Second"} age={23} /> */}
+          <Route
+            path="/"
+            element={
+              <>
+                <ClassComp name={"First"} age={23} />
+                <ClassComp name={"Second"} age={23} />
+              </>
+            }
+          />
+          <Route
+            path="/mix"
+            element={
+              <>
+                <ClassComp name={"First"} age={23} />
+                <About course={"React"} />
+              </>
+            }
+          />
           <Route path="/about" element={<About course={"React"} />} />
         </Routes>
       </BrowserRouter>
