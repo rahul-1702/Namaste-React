@@ -1,5 +1,6 @@
 Chapter 11 - Data is the new Oil
 Theory:
+● What is Higer Order Component? Why its used and Why its also called Pure function ?
 ● What is prop drilling?
 ● What is lifting the state up?
 ● What is Context Provider and Context Consumer?
