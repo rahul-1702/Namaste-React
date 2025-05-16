@@ -12,4 +12,3 @@ References:
 ● Lifting State Up
 ● React Context
 ● Controlled and uncontrolled components
-● State Lifting
