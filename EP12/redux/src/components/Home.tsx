@@ -13,7 +13,6 @@ export default function Home() {
       }
     })();
 
-    console.log("data : ", data);
   }, []);
 
   return (
