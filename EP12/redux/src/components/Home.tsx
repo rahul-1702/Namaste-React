@@ -21,13 +21,13 @@ export default function Home() {
       <section>
         <h2>All Restaurants</h2>
         <ul>
-          {data &&
+          {/* {data &&
             data.length > 0 &&
             data.map((restaurant, index) => (
               <li key={index} className="border p-2">
                 {restaurant}
               </li>
-            ))}
+            ))} */}
         </ul>
       </section>
     </div>
