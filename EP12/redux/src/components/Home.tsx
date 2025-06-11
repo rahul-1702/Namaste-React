@@ -8,9 +8,10 @@ export default function Home() {
     (async () => {
       const response = await fetch(FETCH_URL);
       const json = await response.json();
-      if (json) {
-        setData(json.restaurants);
-      }
+      // if (json) {
+      //   setData(json.restaurants);
+      // }
+      console.log("json : ", json);
     })();
 
   }, []);
