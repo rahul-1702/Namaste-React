@@ -11,7 +11,7 @@ export default function Home() {
       // if (json) {
       //   setData(json.restaurants);
       // }
-      // console.log("json : ", json);
+      console.log("json : ", json);
     })();
 
   }, []);
