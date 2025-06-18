@@ -1,4 +1,14 @@
-export default function RestaurantDetail({}) {
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+
+export default function RestaurantDetail() {
+  const { id } = useParams();
+
+  // Simulating fetching restaurant details based on ID
+  useEffect(() => {
+    console.log("restaurant id : ", id);
+  }, []);
+
   return (
     <div className="flex gap-10 flex-col">
       <h1>Restaurant Detail</h1>
