@@ -28,7 +28,7 @@ export default function Home() {
     console.log("Restaurants fetched:", restaurants);
   }, [restaurants]);
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <h1 className="flex flex-col items-center justify-center h-lvh text-4xl">Loading...</h1>;
 
   return (
     <div className="flex gap-10 flex-col justify-center align-items-center py-10">
