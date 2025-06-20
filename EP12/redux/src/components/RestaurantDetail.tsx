@@ -44,7 +44,7 @@ export default function RestaurantDetail() {
 
   return (
     <main className="flex flex-col items-center justify-center py-10">
-      <div className="border p-3 rounded-2xl flex flex-col gap-6 w-[400px] h-150">
+      <div className="border p-3 rounded-2xl flex flex-col gap-6 w-[420px] h-180">
         <img
           src={
             info?.cloudinaryImageId
@@ -55,7 +55,7 @@ export default function RestaurantDetail() {
           className="h-3/5 rounded-xl"
         />
 
-        <div className="flex flex-col justify-start items-start h-2/5">
+        <div className="flex flex-col justify-between items-start h-2/5">
           <h3 className="text-2xl text-cyan-300 font-bold mb-2">
             {info?.name}
           </h3>
@@ -80,6 +80,10 @@ export default function RestaurantDetail() {
               <span>{info?.sla?.deliveryTime} mins</span>
             </li>
           </ul>
+          <span className="flex justify-center items-center w-[180px] ms-auto bg-cyan-600 text-white rounded-md cursor-pointer">
+            <button className="flex justify-center items-center m-auto px-3 py-0 w-3/12 cursor-pointer text-4xl pb-1 active:bg-cyan-500 active:rounded-md">-</button>
+            <span className="bg-gray-600 px-4 py-2 w-6/12 text-center rounded-sm">Add</span> <button className="flex justify-center items-center m-auto px-3 py-1 w-3/12 cursor-pointer text-3xl active:bg-cyan-500 active:rounded-md">+</button>
+          </span>
         </div>
       </div>
     </main>
