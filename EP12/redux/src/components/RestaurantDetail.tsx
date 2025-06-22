@@ -35,6 +35,24 @@ export default function RestaurantDetail() {
     console.log("Restaurant Data:", info);
   }, [info]);
 
+  const handleButtonClick = () => {
+    console.log("Button clicked for add item:", info);
+    // Here you can dispatch an action to add the restaurant to the cart
+    // For example: dispatch(addToCart(info));
+  };
+
+  const handleDecreaseCartCount = () => {
+    console.log("Button clicked for decrease item:", info);
+    // Here you can dispatch an action to decrease the count of the restaurant in the cart
+    // For example: dispatch(decreaseCartCount(info));
+  };
+
+  const handleIncreaseCartCount = () => {
+    console.log("Button clicked for increase item:", info);
+    // Here you can dispatch an action to increase the count of the restaurant in the cart
+    // For example: dispatch(increaseCartCount(info));
+  };
+
   if (loading)
     return (
       <h1 className="flex flex-col items-center justify-center h-lvh text-4xl">
@@ -81,8 +99,24 @@ export default function RestaurantDetail() {
             </li>
           </ul>
           <span className="flex justify-center items-center w-[180px] ms-auto bg-cyan-600 text-white rounded-md cursor-pointer">
-            <button className="flex justify-center items-center m-auto px-3 py-0 w-3/12 cursor-pointer text-4xl pb-1 active:bg-cyan-500 active:rounded-md">-</button>
-            <span className="bg-gray-600 px-4 py-2 w-6/12 text-center rounded-sm">Add</span> <button className="flex justify-center items-center m-auto px-3 py-1 w-3/12 cursor-pointer text-3xl active:bg-cyan-500 active:rounded-md">+</button>
+            <button
+              onClick={handleDecreaseCartCount}
+              className="flex justify-center items-center m-auto px-3 py-0 w-3/12 cursor-pointer text-4xl pb-1 active:bg-cyan-500 active:rounded-md"
+            >
+              -
+            </button>
+            <button
+              onClick={handleButtonClick}
+              className="bg-gray-600 px-4 py-2 w-6/12 text-center rounded-sm active:bg-gray-600 active:rounded-md"
+            >
+              Add
+            </button>
+            <button
+              onClick={handleIncreaseCartCount}
+              className="flex justify-center items-center m-auto px-3 py-1 w-3/12 cursor-pointer text-3xl active:bg-cyan-500 active:rounded-md"
+            >
+              +
+            </button>
           </span>
         </div>
       </div>
