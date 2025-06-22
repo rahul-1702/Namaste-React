@@ -107,7 +107,7 @@ export default function RestaurantDetail() {
             </button>
             <button
               onClick={handleButtonClick}
-              className="bg-gray-600 px-4 py-2 w-6/12 text-center rounded-sm active:bg-gray-600 active:rounded-md"
+              className="bg-gray-600 px-4 py-2 w-6/12 text-center rounded-sm cursor-pointer active:bg-gray-500 active:rounded-md"
             >
               Add
             </button>
