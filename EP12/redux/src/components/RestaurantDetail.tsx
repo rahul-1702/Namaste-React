@@ -1,12 +1,19 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Header from "./Header";
+import {useDispatch, useSelector} from "react-redux";
+import {addItem, increaseCount, decreaseCount} from "../Redux/AddToCart";
+import type {RootState} from "../Redux/Store";
+import type {RestaurantType} from "./Home.tsx";
 
 export default function RestaurantDetail() {
   const params = useParams();
   const id: string = params.id || "0";
-  const [restaurants, setRestaurants] = useState<any[]>([]);
+  const [restaurants, setRestaurants] = useState<unknown[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [info, setInfo] = useState<object>({});
+  const [info, setInfo] = useState<RestaurantType>();
+  const dispatch = useDispatch();
+  const cart = useSelector((state: RootState) => state.cart);
 
   useEffect(() => {
     const FETCH_URL =
@@ -31,26 +38,21 @@ export default function RestaurantDetail() {
     setInfo(restaurants.find((res) => res?.info?.id === id)?.info || {});
   }, [restaurants, id]);
 
-  useEffect(() => {
-    console.log("Restaurant Data:", info);
-  }, [info]);
-
-  const handleButtonClick = () => {
-    console.log("Button clicked for add item:", info);
-    // Here you can dispatch an action to add the restaurant to the cart
-    // For example: dispatch(addToCart(info));
+  const handleAddToCartClick = (info: RestaurantType) => {
+    const findItem = cart.some((item: RestaurantType) => item.id === info.id);
+    if (!findItem) {
+      dispatch(addItem(info))
+    } else {
+      alert(info.name + " already added to cart !!");
+    }
   };
 
-  const handleDecreaseCartCount = () => {
-    console.log("Button clicked for decrease item:", info);
-    // Here you can dispatch an action to decrease the count of the restaurant in the cart
-    // For example: dispatch(decreaseCartCount(info));
+  const handleDecreaseCartCount = (info: RestaurantType) => {
+    dispatch(decreaseCount(info));
   };
 
-  const handleIncreaseCartCount = () => {
-    console.log("Button clicked for increase item:", info);
-    // Here you can dispatch an action to increase the count of the restaurant in the cart
-    // For example: dispatch(increaseCartCount(info));
+  const handleIncreaseCartCount = (info: RestaurantType) => {
+    dispatch(increaseCount(info));
   };
 
   if (loading)
@@ -62,19 +64,20 @@ export default function RestaurantDetail() {
 
   return (
     <main className="flex flex-col items-center justify-center py-10">
-      <div className="border p-3 rounded-2xl flex flex-col gap-6 w-[420px] h-180">
+      <Header atc={true} />
+      <div className="border p-3 rounded-2xl flex flex-col gap-6 w-[420px] h-180 mt-20">
         <img
           src={
             info?.cloudinaryImageId
               ? `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/${info.cloudinaryImageId}`
-              : ""
+              : "image"
           }
           alt={info?.name}
           className="h-3/5 rounded-xl"
         />
 
         <div className="flex flex-col justify-between items-start h-2/5">
-          <h3 className="text-2xl text-cyan-300 font-bold mb-2">
+          <h3 className="text-2xl text-cyan-300 font-bold mb-1">
             {info?.name}
           </h3>
           <ul>
@@ -100,19 +103,19 @@ export default function RestaurantDetail() {
           </ul>
           <span className="flex justify-center items-center w-[180px] ms-auto bg-cyan-600 text-white rounded-md cursor-pointer">
             <button
-              onClick={handleDecreaseCartCount}
+              onClick={() => handleDecreaseCartCount(info)}
               className="flex justify-center items-center m-auto px-3 py-0 w-3/12 cursor-pointer text-4xl pb-1 active:bg-cyan-500 active:rounded-md"
             >
               -
             </button>
             <button
-              onClick={handleButtonClick}
+              onClick={() => handleAddToCartClick(info)}
               className="bg-gray-600 px-4 py-2 w-6/12 text-center rounded-sm cursor-pointer active:bg-gray-500 active:rounded-md"
             >
               Add
             </button>
             <button
-              onClick={handleIncreaseCartCount}
+              onClick={() => handleIncreaseCartCount(info)}
               className="flex justify-center items-center m-auto px-3 py-1 w-3/12 cursor-pointer text-3xl active:bg-cyan-500 active:rounded-md"
             >
               +

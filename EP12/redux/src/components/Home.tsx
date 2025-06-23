@@ -1,5 +1,20 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
+import Header from "./Header";
+
+export type RestaurantType = {
+  id: string,
+  name: string,
+  avgRating: string,
+  cuisines: string[],
+  isOpen: boolean,
+  costForTwo: string,
+  sla: {
+    deliveryTime: number
+  },
+  count?: number,
+  cloudinaryImageId: string,
+}
 
 export default function Home() {
   const [restaurants, setRestaurants] = useState<any[]>([]);
@@ -24,23 +39,20 @@ export default function Home() {
     })();
   }, []);
 
-  useEffect(() => {
-    console.log("Restaurants fetched:", restaurants);
-  }, [restaurants]);
-
   if (loading) return <h1 className="flex flex-col items-center justify-center h-lvh text-4xl">Loading...</h1>;
 
   return (
     <div className="flex gap-10 flex-col justify-center align-items-center py-10">
-      <h1 className="text-center text-4xl text-red-100 bg-cyan-800 py-4 border-1 border-cyan-300 rounded-2xl fixed w-full top-2">Redux - Food Store</h1>
+      <Header atc={true}/>
       <section className="flex flex-col gap-4 align-items-center justify-center mt-20">
         <h2 className="text-center text-4xl text-cyan-300">All Restaurants</h2>
-        <ul className="flex flex-wrap gap-4 align-items-center justify-center p-2">
+        <ul className="flex flex-wrap gap-4 align-items-center justify-center p-3">
           {restaurants?.length > 0 &&
             restaurants.map((restaurant, index) => (
               <RestaurantCard
                 key={restaurant?.info?.id || index}
-                restaurant={restaurant}
+                restaurant={restaurant?.info}
+                cartMode={false}
               />
             ))}
         </ul>
