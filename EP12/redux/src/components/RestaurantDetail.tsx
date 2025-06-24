@@ -1,19 +1,16 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Header from "./Header";
-import {useDispatch, useSelector} from "react-redux";
-import {addItem, increaseCount, decreaseCount} from "../Redux/AddToCart";
-import type {RootState} from "../Redux/Store";
-import type {RestaurantType} from "./Home.tsx";
+import useRestaurantDetails from "../Hook/useRestaurantDetails.ts";
+import FoodItem from "./FoodItem";
 
 export default function RestaurantDetail() {
   const params = useParams();
   const id: string = params.id || "0";
   const [restaurants, setRestaurants] = useState<unknown[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [info, setInfo] = useState<RestaurantType>();
-  const dispatch = useDispatch();
-  const cart = useSelector((state: RootState) => state.cart);
+  const [info, setInfo] = useState<object>({});
+  const { res } = useRestaurantDetails(id);
 
   useEffect(() => {
     const FETCH_URL =
@@ -35,25 +32,16 @@ export default function RestaurantDetail() {
   }, []);
 
   useEffect(() => {
-    setInfo(restaurants.find((res) => res?.info?.id === id)?.info || {});
+    setInfo(restaurants?.find((res) => res?.info?.id === id)?.info || {});
   }, [restaurants, id]);
 
-  const handleAddToCartClick = (info: RestaurantType) => {
-    const findItem = cart.some((item: RestaurantType) => item.id === info.id);
-    if (!findItem) {
-      dispatch(addItem(info))
-    } else {
-      alert(info.name + " already added to cart !!");
-    }
-  };
+  useEffect(() => {
+    console.log("card info : ", info);
+  }, [info]);
 
-  const handleDecreaseCartCount = (info: RestaurantType) => {
-    dispatch(decreaseCount(info));
-  };
-
-  const handleIncreaseCartCount = (info: RestaurantType) => {
-    dispatch(increaseCount(info));
-  };
+  useEffect(() => {
+    console.log("22 card res : ", res);
+  }, [res]);
 
   if (loading)
     return (
@@ -63,9 +51,9 @@ export default function RestaurantDetail() {
     );
 
   return (
-    <main className="flex flex-col items-center justify-center py-10">
+    <main className="flex flex-col items-center justify-center py-10 px-5">
       <Header atc={true} />
-      <div className="border p-3 rounded-2xl flex flex-col gap-6 w-[420px] h-180 mt-20">
+      <div className="border p-3 rounded-2xl flex gap-6 w-[90vw] h-80 mt-20">
         <img
           src={
             info?.cloudinaryImageId
@@ -73,11 +61,11 @@ export default function RestaurantDetail() {
               : "image"
           }
           alt={info?.name}
-          className="h-3/5 rounded-xl"
+          className="w-2/5 rounded-xl object-cover object-top"
         />
 
-        <div className="flex flex-col justify-between items-start h-2/5">
-          <h3 className="text-2xl text-cyan-300 font-bold mb-1">
+        <div className="flex flex-col justify-start items-start w-3/5">
+          <h3 className="text-2xl text-cyan-300 font-bold mb-4 mt-4">
             {info?.name}
           </h3>
           <ul>
@@ -101,27 +89,20 @@ export default function RestaurantDetail() {
               <span>{info?.sla?.deliveryTime} mins</span>
             </li>
           </ul>
-          <span className="flex justify-center items-center w-[180px] ms-auto bg-cyan-600 text-white rounded-md cursor-pointer">
-            <button
-              onClick={() => handleDecreaseCartCount(info)}
-              className="flex justify-center items-center m-auto px-3 py-0 w-3/12 cursor-pointer text-4xl pb-1 active:bg-cyan-500 active:rounded-md"
-            >
-              -
-            </button>
-            <button
-              onClick={() => handleAddToCartClick(info)}
-              className="bg-gray-600 px-4 py-2 w-6/12 text-center rounded-sm cursor-pointer active:bg-gray-500 active:rounded-md"
-            >
-              Add
-            </button>
-            <button
-              onClick={() => handleIncreaseCartCount(info)}
-              className="flex justify-center items-center m-auto px-3 py-1 w-3/12 cursor-pointer text-3xl active:bg-cyan-500 active:rounded-md"
-            >
-              +
-            </button>
-          </span>
         </div>
+      </div>
+      <hr className={'text-gray-500 w-full h-1 mt-15'}/>
+      <div className={'flex flex-col items-center justify-center'}>
+        <h2 className={'text-2xl mt-10 text-cyan-400'}>Popular Items of {info?.name}</h2>
+        <ul className={'my-5 flex flex-col gap-4 items-center max-w-4xl'}>
+          {
+            res && res?.length > 0 && res.map((item: unknown, index: number) => (<li key={index}>
+                    <FoodItem item={item} info={info}/>
+                </li>
+              )
+            )
+          }
+        </ul>
       </div>
     </main>
   );

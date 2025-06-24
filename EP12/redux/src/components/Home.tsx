@@ -13,7 +13,7 @@ export type RestaurantType = {
     deliveryTime: number
   },
   count?: number,
-  cloudinaryImageId: string,
+  cloudinaryImageId: string
 }
 
 export default function Home() {
@@ -47,14 +47,16 @@ export default function Home() {
       <section className="flex flex-col gap-4 align-items-center justify-center mt-20">
         <h2 className="text-center text-4xl text-cyan-300">All Restaurants</h2>
         <ul className="flex flex-wrap gap-4 align-items-center justify-center p-3">
-          {restaurants?.length > 0 &&
-            restaurants.map((restaurant, index) => (
-              <RestaurantCard
-                key={restaurant?.info?.id || index}
-                restaurant={restaurant?.info}
-                cartMode={false}
-              />
-            ))}
+          {
+            restaurants?.length > 0 ?
+              restaurants.map((restaurant, index) => (
+                <RestaurantCard
+                  key={restaurant?.info?.id || index}
+                  restaurant={restaurant?.info}
+                  cartMode={false}
+                />
+              )) : <p className={'italic text-gray-400'}>No Restaurant Found !!</p>
+          }
         </ul>
       </section>
     </div>

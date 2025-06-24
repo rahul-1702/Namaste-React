@@ -1,12 +1,11 @@
 import {useState} from "react";
-import type {RestaurantType} from "../components/Home.tsx";
+import type {RestaurantType} from "../components/Home";
 
 const useFetchRestaurants = () => {
     const [restaurants, setRestaurants] = useState<RestaurantType[]>([]);
-    const [loading, setLoading] = useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string>("");
 
-    setLoading(true);
     const FETCH_URL =
         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.45970&lng=77.02820&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
     (async () => {
@@ -24,8 +23,7 @@ const useFetchRestaurants = () => {
         }
     })();
 
-    return { loading, restaurants, error };
+    return { loading, restaurants };
 }
 
 export default useFetchRestaurants;
-

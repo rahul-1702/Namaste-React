@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type {RestaurantType} from "../components/Home.tsx";
+import type {RestaurantType} from "../components/Home";
 
 type ReduxActionType = { payload: RestaurantType, type: string }
 
@@ -11,7 +11,10 @@ const AddToCartSlice = createSlice({
             state.push({ ...action.payload, count: 1 })
         },
         removeItem: (state: RestaurantType[], action: ReduxActionType) =>{
-            state.filter((item) => item.id !== action.payload.id);
+            const index = state.findIndex((item) => item.id === action.payload.id);
+            if (index !== -1) {
+                state.splice(index, 1);
+            }
         },
         increaseCount: (state: RestaurantType[], action: ReduxActionType) => {
             const item = state.find((item: RestaurantType) => item.id === action.payload.id);
