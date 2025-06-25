@@ -1,8 +1,8 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from './components/Home';
-import RestaurantDetail from "./components/RestaurantDetail";
-import CartPage from "./components/CartPage";
+import Home from './components/Home.tsx';
+import RestaurantDetail from "./components/RestaurantDetail.tsx";
+import CartPage from "./components/CartPage.tsx";
 
 function App() {
   return (

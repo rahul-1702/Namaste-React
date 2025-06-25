@@ -1,11 +1,11 @@
-import type {RestaurantType} from "./Home";
 import * as React from "react";
+import type {FoodItemListType} from "./FoodItem";
 
 interface AddCartButtonProps {
-    increase: (info: RestaurantType) => void;
-    clicked: (info: RestaurantType) => void;
-    decrease: (info: RestaurantType) => void;
-    data: RestaurantType;
+    increase: (info: FoodItemListType) => void;
+    clicked: (info: FoodItemListType) => void;
+    decrease: (info: FoodItemListType) => void;
+    data: FoodItemListType;
 }
 
 const AddCartButton: React.FC<AddCartButtonProps> = ({ decrease, clicked, increase, data }) => {

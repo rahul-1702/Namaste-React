@@ -1,42 +1,73 @@
-import AddCartButton from "./AddCartButton";
-import type {RestaurantType} from "./Home";
+import AddCartButton from "./AddCartButton.tsx";
 import {addItem, decreaseCount, increaseCount} from "../Redux/AddToCart.ts";
 import {useDispatch, useSelector} from "react-redux";
 import type {RootState} from "../Redux/Store.ts";
+import * as React from "react";
+import VegTag from "./VegTag.tsx";
 
-interface FoodItemProps {
-    item: RestaurantType;
-    info: RestaurantType[];
+export type IsVeg = "VEG" | "NONVEG";
+
+export type FoodInfoType = {
+    id: string,
+    name: string,
+    imageId: string,
+    description: string,
+    defaultPrice: number,
+    price: number,
+    vegClassifier: string,
+    count: number,
+    itemAttribute: {
+        vegClassifier: IsVeg;
+    }
 }
 
-const FoodItem: React.FC<FoodItemProps> = ({ item, info }) => {
-    const { name, imageId, description } = item?.card?.info;
+export type FoodCardType = {
+    info: FoodInfoType;
+}
+
+export type FoodItemListType = {
+    card: FoodCardType,
+    count?: number
+}
+
+interface FoodItemProps {
+    foodItem: FoodItemListType;
+}
+
+const FoodItem: React.FC<FoodItemProps> = ({ foodItem }) => {
+    // eslint-disable-next-line no-unsafe-optional-chaining
+    const { name, imageId, description, defaultPrice, price, itemAttribute, id } = foodItem?.card?.info;
+    const { vegClassifier } = itemAttribute;
 
     const dispatch = useDispatch();
     const cart = useSelector((state: RootState) => state.cart);
 
-    const handleAddToCartClick = (info: RestaurantType) => {
-        const findItem = cart.some((item: RestaurantType) => item.id === info.id);
+    const handleAddToCartClick = (item: FoodItemListType) => {
+        const findItem = cart.some((it: FoodItemListType) => it?.card?.info?.id === id);
         if (!findItem) {
-            dispatch(addItem(info))
+            dispatch(addItem(item))
         } else {
-            alert(info.name + " already added to cart !!");
+            alert(item?.card?.info?.name + " already added to cart !!");
         }
     };
 
-    const handleDecreaseCartCount = (info: RestaurantType) => {
-        dispatch(decreaseCount(info));
+    const handleDecreaseCartCount = (item: FoodItemListType) => {
+        dispatch(decreaseCount(item));
     };
 
-    const handleIncreaseCartCount = (info: RestaurantType) => {
-        dispatch(increaseCount(info));
+    const handleIncreaseCartCount = (item: FoodItemListType) => {
+        dispatch(increaseCount(item));
     };
 
     return (
         <div className={'flex justify-between gap-12 p-3 my-2 border-1 border-gray-500 rounded-2xl lg:w-[900px] w-[90vw]'}>
             <div className={'w-4/6'}>
-                <h2 className={'mb-3 text-xl m-2 text-yellow-200 '}>{name}</h2>
-                <p className={'mb-2 text-md m-2'}>{description}</p>
+                <div className={'flex justify-between items-center'}>
+                    <h2 className={'mb-3 text-xl m-2 text-yellow-200 '}>{name}</h2>
+                    <VegTag vegClassifier={vegClassifier} />
+                </div>
+                <p className={'text-md m-2'}>{description}</p>
+                <strong className={'text-cyan-400 m-2 text-xl'}>₹ {defaultPrice ? Math.ceil(defaultPrice/100) : Math.ceil(price/100)}</strong>
             </div>
             <div className={'relative'}>
                 <img
@@ -48,7 +79,12 @@ const FoodItem: React.FC<FoodItemProps> = ({ item, info }) => {
                     alt={name}
                     className="rounded-lg object-cover w-[220px] h-50"
                 />
-                <span className={'absolute bottom-[-22px] right-0'}><AddCartButton increase={handleIncreaseCartCount} decrease={handleDecreaseCartCount} clicked={handleAddToCartClick} data={info}/></span>
+                <span className={'absolute bottom-[-22px] left-[50%] translate-x-[-50%]'}>
+                    <AddCartButton
+                        increase={() => handleIncreaseCartCount(foodItem)}
+                        decrease={() => handleDecreaseCartCount(foodItem)}
+                        clicked={() => handleAddToCartClick(foodItem)} data={foodItem}/>
+                </span>
             </div>
         </div>
     )

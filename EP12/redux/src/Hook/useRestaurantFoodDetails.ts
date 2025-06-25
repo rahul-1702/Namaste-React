@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
+import type {FoodItemListType} from "../components/FoodItem";
 
-const useRestaurantDetails = (id: { id: string }) => {
-    const [res, setRes] = useState({});
+const useRestaurantFoodDetails = (id: string) => {
+    const [res, setRes] = useState<FoodItemListType[]>();
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
@@ -16,8 +17,7 @@ const useRestaurantDetails = (id: { id: string }) => {
                 setRes(data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[11]?.card?.card?.itemCards || []);
             }).catch((err) => {
                 console.log("Err : ", err);
-        })
-            .finally(() => {
+            }).finally(() => {
                 setLoading(false);
         })
     }, [id]);
@@ -25,4 +25,4 @@ const useRestaurantDetails = (id: { id: string }) => {
     return { res, loading };
 }
 
-export default useRestaurantDetails;
+export default useRestaurantFoodDetails;

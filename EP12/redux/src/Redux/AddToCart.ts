@@ -1,27 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type {RestaurantType} from "../components/Home";
+import type {FoodItemListType} from "../components/FoodItem";
 
-type ReduxActionType = { payload: RestaurantType, type: string }
+type ReduxActionType = { payload: FoodItemListType, type: string }
+
+const isIdSame = (item: FoodItemListType, action: ReduxActionType) => item?.card?.info?.id === action.payload?.card?.info?.id
 
 const AddToCartSlice = createSlice({
     name: "Add To Cart",
     initialState: [],
     reducers: {
-        addItem: (state: RestaurantType[], action: ReduxActionType) => {
+        addItem: (state: FoodItemListType[], action: ReduxActionType) => {
             state.push({ ...action.payload, count: 1 })
         },
-        removeItem: (state: RestaurantType[], action: ReduxActionType) =>{
-            const index = state.findIndex((item) => item.id === action.payload.id);
+        removeItem: (state: FoodItemListType[], action: ReduxActionType) =>{
+            const index = state.findIndex((item: FoodItemListType) => isIdSame(item,  action));
             if (index !== -1) {
                 state.splice(index, 1);
             }
         },
-        increaseCount: (state: RestaurantType[], action: ReduxActionType) => {
-            const item = state.find((item: RestaurantType) => item.id === action.payload.id);
+        increaseCount: (state: FoodItemListType[], action: ReduxActionType) => {
+            const item = state.find((item: FoodItemListType) => isIdSame(item,  action));
             if (item && item.count && item.count >= 1) item.count += 1;
         },
-        decreaseCount: (state: RestaurantType[], action: ReduxActionType) => {
-            const item = state.find((item: RestaurantType) => item.id === action.payload.id);
+        decreaseCount: (state: FoodItemListType[], action: ReduxActionType) => {
+            const item = state.find((item: FoodItemListType) => isIdSame(item,  action));
             if (item && item.count && item.count > 1) item.count -= 1;
         }
     }

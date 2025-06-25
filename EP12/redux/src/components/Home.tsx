@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import RestaurantCard from "./RestaurantCard";
-import Header from "./Header";
+import Header from "./Header.tsx";
+import useFetchRestaurants from "../Hook/useFetchAllRestaurants.ts";
+import AllRestaurantCard from "./AllRestaurantCard.tsx";
 
-export type RestaurantType = {
+export type ResDetails = {
   id: string,
   name: string,
   avgRating: string,
@@ -16,28 +16,12 @@ export type RestaurantType = {
   cloudinaryImageId: string
 }
 
-export default function Home() {
-  const [restaurants, setRestaurants] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+export type RestaurantType = {
+  info: ResDetails
+}
 
-  useEffect(() => {
-    const FETCH_URL =
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.45970&lng=77.02820&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
-    (async () => {
-      try {
-        const response = await fetch(FETCH_URL);
-        const json = await response.json();
-        const restaurantArr =
-          json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle
-            ?.restaurants;
-        setRestaurants(restaurantArr);
-      } catch (error) {
-        console.error("Failed to fetch restaurants:", error);
-      } finally {
-        setLoading(false);
-      }
-    })();
-  }, []);
+export default function Home() {
+  const { restaurants, loading } = useFetchRestaurants();
 
   if (loading) return <h1 className="flex flex-col items-center justify-center h-lvh text-4xl">Loading...</h1>;
 
@@ -49,11 +33,10 @@ export default function Home() {
         <ul className="flex flex-wrap gap-4 align-items-center justify-center p-3">
           {
             restaurants?.length > 0 ?
-              restaurants.map((restaurant, index) => (
-                <RestaurantCard
+              restaurants.map((restaurant: RestaurantType, index: number) => (
+                <AllRestaurantCard
                   key={restaurant?.info?.id || index}
                   restaurant={restaurant?.info}
-                  cartMode={false}
                 />
               )) : <p className={'italic text-gray-400'}>No Restaurant Found !!</p>
           }

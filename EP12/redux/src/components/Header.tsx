@@ -1,7 +1,7 @@
 import {useSelector} from "react-redux";
-import type {CartStateType} from "../Redux/AddToCart.ts";
-import { type RootState } from "../Redux/Store.ts";
+import {type RootState} from "../Redux/Store.ts";
 import { Link } from "react-router";
+import type {FoodItemListType} from "./FoodItem.tsx";
 
 interface HeaderProps {
     atc: boolean
@@ -9,7 +9,7 @@ interface HeaderProps {
 
 const Header = ({ atc }: HeaderProps) => {
 
-    const cart: CartStateType[] = useSelector((state: RootState) => state.cart);
+    const cart: FoodItemListType[] = useSelector((state: RootState) => state.cart);
 
     return <div className={'p-3 px-4 fixed w-full top-2 z-10'}>
         <div className={'bg-cyan-800 py-4 border-1 border-cyan-300 rounded-2xl w-full flex justify-between px-5'}>
