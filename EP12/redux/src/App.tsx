@@ -1,18 +1,24 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from './components/Home.tsx';
-import RestaurantDetail from "./components/RestaurantDetail.tsx";
-import CartPage from "./components/CartPage.tsx";
+import RestaurantDetail from "./components/RestaurantDetail";
+import CartPage from "./components/CartPage";
+import Header from "./components/Header";
+import Dashboard from "./components/Dashboard";
+import Home from "./components/Home";
 
 function App() {
   return (
     <>
       <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/restaurant/:id" element={<RestaurantDetail />} />
-          <Route path="/cart" element={<CartPage />} />
-        </Routes>
+        <Header atc={true} />
+        <div className={'from-gray-900 to-cyan-950 bg-gradient-to-br text-white'}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/restaurant/:id" element={<RestaurantDetail />} />
+            <Route path="/cart" element={<CartPage />} />
+          </Routes>
+        </div>
       </Router>
     </>
   );

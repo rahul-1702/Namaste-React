@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import type {RestaurantType} from "../components/Home";
+import type {RestaurantType} from "../components/Dashboard";
 
 const useFetchAllRestaurants = () => {
     const [restaurants, setRestaurants] = useState<RestaurantType[]>([]);

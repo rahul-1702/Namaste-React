@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useRestaurantFoodDetails from "../Hook/useRestaurantFoodDetails.ts";
 import useFetchAllRestaurants from "../Hook/useFetchAllRestaurants.ts";
-import type {ResDetails} from "./Home.tsx";
+import type {ResDetails} from "./Dashboard.tsx";
 import FoodItem, { type FoodItemListType } from "./FoodItem.tsx";
-import Header from "./Header.tsx";
+import loadingGif from "../assets/loader.gif";
 
 export default function RestaurantDetail() {
   const params = useParams();
@@ -17,17 +17,11 @@ export default function RestaurantDetail() {
     setResInfo(restaurants?.find((allRes) => allRes.info.id === id)?.info);
   }, [restaurants, id]);
 
-  if (loading)
-    return (
-      <h1 className="flex flex-col items-center justify-center h-lvh text-4xl">
-        Loading...
-      </h1>
-    );
+  if (loading) return <div className="flex flex-col items-center justify-center h-dvh"><img className={'w-50 h-50'} src={loadingGif} alt={'Loading...'}/></div>;
 
   return (
-    <main className="flex flex-col items-center justify-center py-10 px-5">
-      <Header atc={true} />
-      <div className="border p-3 rounded-2xl flex gap-6 w-[90vw] h-80 mt-20">
+    <main className="flex flex-col items-center justify-start py-10 px-5 h-[100%] min-h-[100vh]">
+      <div className="border p-3 rounded-2xl flex gap-6 w-[90vw] h-80 mt-20 from-gray-900 to-cyan-500 to-10% from-90% bg-gradient-to-br">
         <img
           src={
             resInfo?.cloudinaryImageId
@@ -67,14 +61,14 @@ export default function RestaurantDetail() {
       </div>
       <hr className={'text-gray-500 w-full h-1 mt-15'}/>
       <div className={'flex flex-col items-center justify-center'}>
-        <h2 className={'text-2xl mt-10 text-cyan-400'}>Popular Items of {resInfo?.name}</h2>
+        <h2 className={'text-2xl mt-10 text-white'}>Popular Items of {resInfo?.name}</h2>
         <ul className={'my-5 flex flex-col gap-4 items-center max-w-4xl'}>
           {
-            res && res.length > 0 && res.map((item: FoodItemListType, index: number) => (<li key={index}>
+            res && res.length > 0 ? res.map((item: FoodItemListType, index: number) => (<li key={index}>
                     <FoodItem foodItem={item}/>
                 </li>
               )
-            )
+            ) : <p className={'italic text-gray-400'}>No Items Found !!</p>
           }
         </ul>
       </div>

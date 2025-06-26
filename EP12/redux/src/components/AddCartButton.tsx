@@ -13,19 +13,19 @@ const AddCartButton: React.FC<AddCartButtonProps> = ({ decrease, clicked, increa
         <span className="flex justify-center items-center w-[180px] ms-auto bg-cyan-600 text-white rounded-md cursor-pointer">
             <button
                 onClick={() => decrease(data)}
-                className="flex justify-center items-center m-auto px-3 py-0 w-3/12 cursor-pointer text-4xl pb-1 active:bg-cyan-500 active:rounded-md"
+                className="flex justify-center items-center m-auto px-3 py-0 w-3/12 cursor-pointer text-4xl pb-1 hover:bg-cyan-700 hover:rounded-md active:bg-cyan-600 active:rounded-md"
             >
               -
             </button>
             <button
                 onClick={() => clicked(data)}
-                className="bg-gray-600 px-4 py-2 w-6/12 text-center rounded-sm cursor-pointer active:bg-gray-500 active:rounded-md"
+                className="bg-gray-600 px-4 py-2 w-6/12 text-center rounded-sm cursor-pointer hover:bg-gray-700 hover:rounded-md active:bg-gray-600 active:rounded-md"
             >
               Add
             </button>
             <button
                 onClick={() => increase(data)}
-                className="flex justify-center items-center m-auto px-3 py-1 w-3/12 cursor-pointer text-3xl active:bg-cyan-500 active:rounded-md"
+                className="flex justify-center items-center m-auto px-3 py-1 w-3/12 cursor-pointer text-3xl hover:bg-cyan-700 hover:rounded-md active:bg-cyan-600 active:rounded-md"
             >
               +
             </button>

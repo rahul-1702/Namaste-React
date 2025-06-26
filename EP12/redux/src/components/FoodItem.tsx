@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import type {RootState} from "../Redux/Store.ts";
 import * as React from "react";
 import VegTag from "./VegTag.tsx";
+import {toast} from "react-toastify";
 
 export type IsVeg = "VEG" | "NONVEG";
 
@@ -46,8 +47,9 @@ const FoodItem: React.FC<FoodItemProps> = ({ foodItem }) => {
         const findItem = cart.some((it: FoodItemListType) => it?.card?.info?.id === id);
         if (!findItem) {
             dispatch(addItem(item))
+            toast.success(item?.card?.info?.name + ' added to Cart');
         } else {
-            alert(item?.card?.info?.name + " already added to cart !!");
+            toast.error(item?.card?.info?.name + " already added to cart !!");
         }
     };
 
@@ -60,7 +62,7 @@ const FoodItem: React.FC<FoodItemProps> = ({ foodItem }) => {
     };
 
     return (
-        <div className={'flex justify-between gap-12 p-3 my-2 border-1 border-gray-500 rounded-2xl lg:w-[900px] w-[90vw]'}>
+        <div className={'flex justify-between gap-12 p-3 my-2 border-1 border-gray-500 from-gray-900 to-cyan-950 bg-gradient-to-tl hover:from-gray-800 hover:to-cyan-850 ease-in-out transition-all cursor-pointer rounded-2xl lg:w-[900px] w-[90vw]'}>
             <div className={'w-4/6'}>
                 <div className={'flex justify-between items-center'}>
                     <h2 className={'mb-3 text-xl m-2 text-yellow-200 '}>{name}</h2>

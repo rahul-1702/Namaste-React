@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type {ResDetails} from "./Home";
+import type {ResDetails} from "./Dashboard";
 import * as React from "react";
 
 interface AllRestaurantCardProps {
@@ -12,7 +12,7 @@ const AllRestaurantCard: React.FC<AllRestaurantCardProps> = ({ restaurant }) => 
       <>
       <Link
         to={"/restaurant/" + restaurant?.id}
-        className={"border p-3 rounded-2xl flex gap-6 ease-in-out hover:bg-gray-800 w-[600px] h-60 relative cursor-pointer"}
+        className={"border p-3 rounded-2xl flex gap-6 hover:to-cyan-700 hover:from-gray-800 bg-gradient-to-tl from-gray-900 to-cyan-800 ease-in-out transition-all w-[600px] h-60 relative cursor-pointer"}
       >
         <img
           src={
@@ -24,8 +24,8 @@ const AllRestaurantCard: React.FC<AllRestaurantCardProps> = ({ restaurant }) => 
           className="w-2/5 rounded-xl"
         />
 
-        <div className="flex flex-col justify-between align-items-start w-3/5">
-            <h3 className="text-2xl text-yellow-200">{restaurant?.name}</h3>
+        <div className="flex flex-col justify-start items-start w-3/5">
+            <h3 className="text-2xl text-yellow-200 mb-4">{restaurant?.name}</h3>
           <ul>
             <li className="text-md">
               <span>ID:</span> <span>{restaurant?.id}</span>
@@ -44,9 +44,6 @@ const AllRestaurantCard: React.FC<AllRestaurantCardProps> = ({ restaurant }) => 
             </li>
             <li className="text-md">
               <span>CostForTwo:</span> <span>{restaurant?.costForTwo}</span>
-            </li>
-            <li className="text-md">
-              <span>IsOpen:</span> <span>{restaurant?.isOpen}</span>
             </li>
           </ul>
         </div>
