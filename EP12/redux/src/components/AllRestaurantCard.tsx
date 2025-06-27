@@ -12,7 +12,7 @@ const AllRestaurantCard: React.FC<AllRestaurantCardProps> = ({ restaurant }) => 
       <>
       <Link
         to={"/restaurant/" + restaurant?.id}
-        className={"border p-3 rounded-2xl flex gap-6 hover:to-cyan-700 hover:from-gray-800 bg-gradient-to-tl from-gray-900 to-cyan-800 ease-in-out transition-all w-[600px] h-60 relative cursor-pointer"}
+        className={"border p-3 rounded-2xl flex gap-6 hover:to-cyan-700 hover:from-gray-800 bg-gradient-to-tl from-gray-900 to-cyan-800 hover:scale-102 ease-in-out transition-all w-[600px] h-60 relative cursor-pointer"}
       >
         <img
           src={

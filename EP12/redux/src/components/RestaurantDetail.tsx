@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useRestaurantFoodDetails from "../Hook/useRestaurantFoodDetails.ts";
 import useFetchAllRestaurants from "../Hook/useFetchAllRestaurants.ts";
-import type {ResDetails} from "./Dashboard.tsx";
-import FoodItem, { type FoodItemListType } from "./FoodItem.tsx";
+import type {ResDetails} from "./Dashboard";
+import FoodItem, { type FoodItemListType } from "./FoodItem";
 import loadingGif from "../assets/loader.gif";
+import SimpleButton from "./SimpleButton";
 
 export default function RestaurantDetail() {
   const params = useParams();
@@ -20,8 +21,11 @@ export default function RestaurantDetail() {
   if (loading) return <div className="flex flex-col items-center justify-center h-dvh"><img className={'w-50 h-50'} src={loadingGif} alt={'Loading...'}/></div>;
 
   return (
-    <main className="flex flex-col items-center justify-start py-10 px-5 h-[100%] min-h-[100vh]">
-      <div className="border p-3 rounded-2xl flex gap-6 w-[90vw] h-80 mt-20 from-gray-900 to-cyan-500 to-10% from-90% bg-gradient-to-br">
+    <main className="flex flex-col items-center gap-5 justify-start py-10 px-5 h-[100%] min-h-[100vh] pt-30">
+      <div className={'w-[90vw]'}>
+        <SimpleButton text={'Back'} link={'back'} />
+      </div>
+      <div className="border p-3 rounded-2xl flex gap-6 w-[90vw] h-80 from-gray-900 to-cyan-500 to-10% from-90% bg-gradient-to-br">
         <img
           src={
             resInfo?.cloudinaryImageId

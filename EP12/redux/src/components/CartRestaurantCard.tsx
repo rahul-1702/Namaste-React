@@ -1,6 +1,6 @@
 import {decreaseCount, increaseCount, removeItem} from "../Redux/AddToCart.ts";
 import {useDispatch} from "react-redux";
-import type {FoodItemListType} from "./FoodItem.tsx";
+import type {FoodItemListType} from "./FoodItem";
 import * as React from "react";
 import {toast} from "react-toastify";
 
@@ -27,7 +27,7 @@ const CartRestaurantCard: React.FC<CartRestaurantCardProps> = ({ item }) => {
 
   return (
       <div
-        className={"border p-3 rounded-2xl flex gap-6 from-gray-900 to-cyan-950 bg-gradient-to-tl hover:from-gray-800 hover:to-cyan-850 ease-in-out transition-all w-[600px] h-60 relative cursor-pointer"}
+        className={"border p-3 rounded-2xl flex gap-6 hover:scale-102 from-gray-900 to-cyan-950 bg-gradient-to-tl hover:from-gray-800 hover:to-cyan-850 ease-in-out transition-all w-[600px] h-60 relative cursor-pointer"}
       >
         <img
           src={
