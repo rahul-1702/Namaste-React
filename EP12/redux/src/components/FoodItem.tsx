@@ -36,8 +36,8 @@ interface FoodItemProps {
 }
 
 const FoodItem: React.FC<FoodItemProps> = ({ foodItem }) => {
-    // eslint-disable-next-line no-unsafe-optional-chaining
-    const { name, imageId, description, defaultPrice, price, itemAttribute, id } = foodItem?.card?.info;
+
+    const { name, imageId, description, defaultPrice, price, itemAttribute, id } = foodItem.card.info;
     const { vegClassifier } = itemAttribute;
 
     const dispatch = useDispatch();

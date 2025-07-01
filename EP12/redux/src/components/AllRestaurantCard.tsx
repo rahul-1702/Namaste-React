@@ -40,9 +40,6 @@ const AllRestaurantCard: React.FC<AllRestaurantCardProps> = ({ restaurant }) => 
               <span>Rating:</span> <span>{restaurant?.avgRating}</span>
             </li>
             <li className="text-md">
-              <span>Cuisines:</span> <span>{restaurant?.cuisines?.slice(0, 3)}</span>
-            </li>
-            <li className="text-md">
               <span>CostForTwo:</span> <span>{restaurant?.costForTwo}</span>
             </li>
           </ul>
