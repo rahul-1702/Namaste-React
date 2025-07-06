@@ -1,5 +1,5 @@
-import {useEffect, useState} from "react";
-import type {FoodItemListType} from "../components/FoodItem";
+import { useEffect, useState } from "react";
+import type { FoodItemListType } from "../components/FoodItem";
 
 const useRestaurantFoodDetails = (id: string) => {
     const [res, setRes] = useState<FoodItemListType[]>();

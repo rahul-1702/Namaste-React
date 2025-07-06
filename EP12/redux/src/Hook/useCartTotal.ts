@@ -1,4 +1,4 @@
-import type {FoodItemListType} from "../components/FoodItem";
+import type { FoodItemListType } from "../components/FoodItem";
 import { useSelector } from "react-redux";
 import type { RootState } from "../Redux/Store.ts";
 import { useEffect, useState } from "react";
