@@ -1,7 +1,7 @@
-import {useSelector} from "react-redux";
-import {type RootState} from "../Redux/Store.ts";
+import { useSelector } from "react-redux";
+import type { RootState } from "../Redux/Store.ts";
 import { Link } from "react-router";
-import type {FoodItemListType} from "./FoodItem";
+import type { FoodItemListType } from "./FoodItem";
 import { ToastContainer, Bounce } from "react-toastify";
 
 interface HeaderProps {

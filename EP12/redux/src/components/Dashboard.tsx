@@ -1,7 +1,7 @@
 import AllRestaurantCard from "./AllRestaurantCard";
 import useFetchAllRestaurants from "../Hook/useFetchAllRestaurants.ts";
 import loadingGif from "../assets/loader.gif";
-import {type ChangeEvent, useEffect, useState} from "react";
+import { type ChangeEvent, useEffect, useState } from "react";
 import SimpleButton from "./SimpleButton.tsx";
 
 export type ResDetails = {

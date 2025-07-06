@@ -1,4 +1,4 @@
-import type {IsVeg} from "./FoodItem";
+import type { IsVeg } from "./FoodItem";
 import * as React from "react";
 
 interface VegTagProps {

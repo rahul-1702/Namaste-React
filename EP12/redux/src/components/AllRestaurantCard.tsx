@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type {ResDetails} from "./Dashboard";
+import type { ResDetails } from "./Dashboard";
 import * as React from "react";
 
 interface AllRestaurantCardProps {

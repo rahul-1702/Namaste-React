@@ -1,5 +1,5 @@
 import * as React from "react";
-import type {FoodItemListType} from "./FoodItem";
+import type { FoodItemListType } from "./FoodItem";
 
 interface AddCartButtonProps {
     increase: (info: FoodItemListType) => void;

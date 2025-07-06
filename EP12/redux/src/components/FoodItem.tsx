@@ -1,10 +1,10 @@
 import AddCartButton from "./AddCartButton";
-import {addItem, decreaseCount, increaseCount} from "../Redux/AddToCart.ts";
-import {useDispatch, useSelector} from "react-redux";
-import type {RootState} from "../Redux/Store.ts";
+import { addItem, decreaseCount, increaseCount } from "../Redux/AddToCart.ts";
+import { useDispatch, useSelector } from "react-redux";
+import type { RootState } from "../Redux/Store.ts";
 import * as React from "react";
 import VegTag from "./VegTag";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 
 export type IsVeg = "VEG" | "NONVEG";
 

@@ -1,11 +1,11 @@
 import CartRestaurantCard from "./CartRestaurantCard";
-import {useDispatch, useSelector} from "react-redux";
-import type {RootState} from "../Redux/Store.ts";
-import type {FoodItemListType} from "./FoodItem";
+import { useDispatch, useSelector } from "react-redux";
+import type { RootState } from "../Redux/Store.ts";
+import type { FoodItemListType } from "./FoodItem";
 import loadingGif from "../assets/loader.gif";
 import SimpleButton from "./SimpleButton";
 import useCartTotal from "../Hook/useCartTotal.ts";
-import {clearCart} from "../Redux/AddToCart.ts";
+import { clearCart } from "../Redux/AddToCart.ts";
 
 const CartPage = () => {
     const cartData: FoodItemListType[] = useSelector((state: RootState) => state.cart);

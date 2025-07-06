@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useRestaurantFoodDetails from "../Hook/useRestaurantFoodDetails.ts";
 import useFetchAllRestaurants from "../Hook/useFetchAllRestaurants.ts";
-import type {ResDetails} from "./Dashboard";
+import type { ResDetails } from "./Dashboard";
 import FoodItem, { type FoodItemListType } from "./FoodItem";
 import loadingGif from "../assets/loader.gif";
 import SimpleButton from "./SimpleButton";
