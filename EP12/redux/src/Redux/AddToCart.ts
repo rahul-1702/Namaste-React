@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type {FoodItemListType} from "../components/FoodItem";
+import type { FoodItemListType } from "../components/FoodItem";
 
 type ReduxActionType = { payload: FoodItemListType, type: string }
 

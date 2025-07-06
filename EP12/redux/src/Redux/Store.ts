@@ -1,4 +1,4 @@
-import {configureStore} from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import AddToCartReducer from "./AddToCart.ts";
 
 export const store = configureStore({
