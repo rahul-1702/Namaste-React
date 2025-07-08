@@ -37,5 +37,15 @@ describe("Grouping Some Test Cases", () => {
       expect(length).toBe(4);
       // expect(length).not.toBe(4);
     });
+
+    test("Checks input elements present or not", () => {
+      // Querying
+      const inputs = screen.getByRole("textbox");
+
+      const length = inputs.length;
+
+      // Assertion
+      expect(length).not.toBe(4);
+    });
   });
 });
