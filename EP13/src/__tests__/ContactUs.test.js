@@ -1,5 +1,5 @@
 import ContactUs from "../components/ContactUs";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 describe("Grouping Some Test Cases", () => {
@@ -16,7 +16,9 @@ describe("Grouping Some Test Cases", () => {
 
   describe("Nested Grouping of Test Cases", () => {
     test("Checks button present or not", () => {
-      const button = screen.getByRole("button");
+      const button = screen.getByRole("button", { name: "Submit" });
+
+      fireEvent.click(button);
 
       // Assertion
       expect(button).toBeInTheDocument();

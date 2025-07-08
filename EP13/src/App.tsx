@@ -18,7 +18,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/restaurant/:id" element={<RestaurantDetail />} />
             <Route path="/cart" element={<CartPage />} />
-            <Route path="/contactus" element={<ContactUs />} />
+            <Route path="/contact-us" element={<ContactUs />} />
           </Routes>
         </div>
       </Router>

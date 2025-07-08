@@ -40,7 +40,7 @@ const Header = ({ atc }: HeaderProps) => {
         </Link>
         <div className="flex gap-6 items-center">
           <Link
-            to={"/contactus"}
+            to={"/contact-us"}
             className="text-md cursor-pointer text-center text-white"
           >
             Contact Us
