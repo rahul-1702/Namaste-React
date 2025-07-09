@@ -1,6 +1,5 @@
 import ContactUs from "../components/ContactUs";
 import { render, screen, fireEvent } from "@testing-library/react";
-import "@testing-library/jest-dom";
 
 describe("Grouping Some Test Cases", () => {
   it("Checks Header Component Loads or not", () => {

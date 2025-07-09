@@ -25,6 +25,17 @@ Coding:
 "@testing-library/react": "^16.3.0",
 "@testing-library/jest-dom": "^6.6.3",
 "typescript": "~5.8.3",
+
+---
+
+npm install --save-dev typescript @types/react @types/react-dom
+npm install --save-dev jest ts-jest @types/jest jest-environment-jsdom
+npm install --save-dev babel-jest @babel/preset-env @babel/preset-react @babel/preset-typescript
+npm install --save-dev @testing-library/react @testing-library/jest-dom
+
+npm install --save-dev util
+
+
 ```
 
 ● Write Unit Tests for Header Component to test for Logo, Cart - 0 items and
