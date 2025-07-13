@@ -28,7 +28,8 @@ describe("Grouping Some Test Cases", () => {
       const inputs = screen.getAllByRole("textbox");
 
       const length = inputs.length;
-      
+      console.log("length : ", length);
+
       // Assertion
       expect(length).toBe(4);
       // expect(length).not.toBe(4);
