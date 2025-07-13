@@ -28,10 +28,7 @@ describe("Grouping Some Test Cases", () => {
       const inputs = screen.getAllByRole("textbox");
 
       const length = inputs.length;
-
-      console.log("Inputs Length : ", length); // Returns React Element or JSX
-      console.log("Inputs : ", inputs); // Returns React Element or JSX
-
+      
       // Assertion
       expect(length).toBe(4);
       // expect(length).not.toBe(4);
