@@ -6,5 +6,6 @@ it("Should render Restaurant Card Compoentn with Mock Data", () => {
 
   const name = screen.getByText("Pizza Hut");
 
-  expect(name).toBe(true);
+  // expect(name).toBe(true);
+  expect(name).toBe(false);
 });
