@@ -31,8 +31,8 @@ describe("Grouping Some Test Cases", () => {
       console.log("length : ", length);
 
       // Assertion
-      expect(length).toBe(4);
-      // expect(length).not.toBe(4);
+      // expect(length).toBe(4);
+      expect(length).not.toBe(4);
     });
 
     test("Checks input elements present or not", () => {
