@@ -10,6 +10,7 @@ describe("Grouping Some Test Cases", () => {
     const text = screen.getByText("Contact Us");
 
     // Assertion
+    // expect(text).toBeInTheDocument();
     expect(text).toBeInTheDocument();
   });
 
