@@ -42,3 +42,5 @@ npm install --save-dev util
 Online Status
 ● Write Integration Test case for search feature on the Homepage
 ● Write Integration Test case for Add to Cart flow
+
+--- Completed mostly Namaste React Series Concept here ---
