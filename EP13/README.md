@@ -43,6 +43,6 @@ Online Status
 ● Write Integration Test case for search feature on the Homepage
 ● Write Integration Test case for Add to Cart flow
 
-// Unit Testing and Integration Testing
+// Done :: Unit Testing and Integration Testing
 
 --- Completed mostly Namaste React Series Concept here (Now its time for Project) ---
