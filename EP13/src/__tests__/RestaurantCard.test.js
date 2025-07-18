@@ -22,22 +22,22 @@ import { render } from "@testing-library/react";
 */
 
 it("Should render Restaurant Card Compoentn with Mock Data", () => {
-
+  // to print before all testcases
   beforeAll(() => {
-    console.log("Restaurant Card Before All ...");
-  })
-
+    console.log("Before testcase");
+  });
+  // to print before each testcase
   beforeEach(() => {
-    console.log("Restaurant Card Before Each ...");
-  })
-
+    console.log("Before Each");
+  });
+  // to print after all testcases
   afterAll(() => {
-    console.log("Restaurant Card After All ...");
-  })
-
+    console.log("After testcases");
+  });
+  // to print after each testcase
   afterEach(() => {
-    console.log("Restaurant Card After Each ...");
-  })
+    console.log("After each");
+  });
 
   render(<AllRestaurantCard restaurant={MOCK_DATA} />);
 
