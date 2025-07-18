@@ -24,7 +24,7 @@ import { render } from "@testing-library/react";
 it("Should render Restaurant Card Compoentn with Mock Data", () => {
 
   beforeAll(() => {
-    console.log("Restaurant Card Before Each ...");
+    console.log("Restaurant Card Before All ...");
   })
 
   beforeEach(() => {
@@ -32,11 +32,11 @@ it("Should render Restaurant Card Compoentn with Mock Data", () => {
   })
 
   afterAll(() => {
-    console.log("Restaurant Card Before Each ...");
+    console.log("Restaurant Card After All ...");
   })
 
   afterEach(() => {
-    console.log("Restaurant Card Before Each ...");
+    console.log("Restaurant Card After Each ...");
   })
 
   render(<AllRestaurantCard restaurant={MOCK_DATA} />);
