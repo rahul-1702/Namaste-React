@@ -38,8 +38,12 @@ it("Should render Restaurant Card Compoentn with Mock Data", () => {
   afterEach(() => {
     console.log("After each");
   });
-
-  // render(<AllRestaurantCard restaurant={MOCK_DATA} />);
+   
+  render(
+    <Router>
+      <AllRestaurantCard restaurant={MOCK_DATA} />
+    </Router>
+  );
 
   const name = screen.getByText("Pizza Hut");
 
