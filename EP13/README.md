@@ -43,4 +43,4 @@ Online Status
 ● Write Integration Test case for search feature on the Homepage
 ● Write Integration Test case for Add to Cart flow
 
---- Completed mostly Namaste React Series Concept here ---
+--- Completed mostly Namaste React Series Concept here (Now its time for Project) ---
