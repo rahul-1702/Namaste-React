@@ -5,56 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="923ab6ad-6b35-40ab-8468-2f567fe3bcca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/netflix-gpt.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/browse/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/login/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Body.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Browse.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Home.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Login.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eslint.config.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postcss.config.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Netflix_Logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/file.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/globe.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/next.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vercel.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/window.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetflixGPT/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetflixGPT/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetflixGPT/eslint.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetflixGPT/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetflixGPT/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetflixGPT/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetflixGPT/public/vite.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetflixGPT/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetflixGPT/src/App.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetflixGPT/src/assets/react.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetflixGPT/src/components/Home.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetflixGPT/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetflixGPT/src/main.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetflixGPT/src/vite-env.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetflixGPT/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetflixGPT/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetflixGPT/tsconfig.node.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../NetflixGPT/vite.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Browse.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Browse.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +52,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Users/rahul/Documents/Namaste-React/EP14/netflix-gpt/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -142,7 +97,8 @@
       <updated>1753076269938</updated>
       <workItem from="1753076271013" duration="680000" />
       <workItem from="1753076961383" duration="18720000" />
-      <workItem from="1753109837471" duration="422000" />
+      <workItem from="1753109837471" duration="1609000" />
+      <workItem from="1753159134828" duration="5022000" />
     </task>
     <servers />
   </component>

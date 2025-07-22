@@ -9,7 +9,7 @@ const Header = () => {
         </div>
         <div className={'flex gap-2 items-center justify-end w-6/12 right-0'}>
             <button className={'flex items-center justify-center rounded-sm bg-transparent cursor-pointer py-1 px-6 outline-1 outline-white'}>English</button>
-            <Link href="/login"><button className={'flex items-center justify-center rounded-sm bg-red-600 cursor-pointer py-1 px-6 font-bold outline-1 outline-red-600'}>Sign In - User</button></Link>
+            <Link href="/login"><button className={'flex items-center justify-center rounded-sm bg-red-600 cursor-pointer py-1 px-6 font-bold outline-1 outline-red-600'}>Sign In</button></Link>
         </div>
     </nav>
 }
