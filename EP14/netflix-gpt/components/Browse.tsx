@@ -4,9 +4,9 @@ import React, { useRef } from "react";
 import Header from "@/components/Header";
 
 const data = [
-    { id: 1, image: "https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg" }, // Stranger Things
-    { id: 2, image: "https://m.media-amazon.com/images/I/91KkWf50SoL._AC_SY679_.jpg" }, // Breaking Bad
-    { id: 3, image: "https://m.media-amazon.com/images/I/81Zt42ioCgL._AC_SY679_.jpg" }, // The Mandalorian
+    { id: 1, image: "https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg" },
+    { id: 2, image: "https://m.media-amazon.com/images/I/91KkWf50SoL._AC_SY679_.jpg" },
+    { id: 3, image: "https://m.media-amazon.com/images/I/81Zt42ioCgL._AC_SY679_.jpg" },
     { id: 4, image: "https://occ-0-2464-3647.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABU73BvQjJgydQFEJ-vZZw9QtO8fL6lIxc71x9tOqxgDWh_BHokCWPIbGC5AxJjDk0D_sIH5KhmmYm9HLr3DKUXg8eo6nzF0rtSI.webp?r=d95" },
     { id: 5, image: "https://occ-0-2464-3647.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABaW57jWqw0Gs9gqgmW816THwyNfPqphIiruQRFy9KXtt9PTPJpB4kzDKriPcpNjPKCj0itu1Yfjl-CR8rGEokBHPKE4O9lZQHXHRRpUHEelwoKk8lOf4gqlws-HnR2iZeSk4.webp?r=609" },
     { id: 6, image: "https://m.media-amazon.com/images/I/91bYsX41DVL._AC_SY679_.jpg" },
