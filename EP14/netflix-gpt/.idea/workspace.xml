@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="923ab6ad-6b35-40ab-8468-2f567fe3bcca" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/(main)/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Browse.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Browse.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Body.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Body.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +65,7 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/(main)" />
       <recent name="$PROJECT_DIR$/app/home" />
     </key>
   </component>

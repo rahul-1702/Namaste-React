@@ -1,6 +1,4 @@
 import Header from "@/components/Header";
-import Home from "@/components/Home";
-import {homedir} from "node:os";
 import React from "react";
 
 const Body = ({children}: {children: React.ReactNode}) => {
