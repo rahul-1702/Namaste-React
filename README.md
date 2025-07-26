@@ -152,3 +152,5 @@ own words.
 - `Enzyme` vs `React Testing Library`
 - What is `Jest` and why do we `use it`?
 ---
+
+🔥 This is just the beginning — ready to build smarter, faster, and scalable apps while growing every step of the way! 💪
